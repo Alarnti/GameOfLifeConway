@@ -18,8 +18,8 @@ class InputFile < Input
 		height = nil
 		coordinates = nil
 		File.open(path, "r") do |f|
-			width = f.gets.to_i
 			height = f.gets.to_i
+			width = f.gets.to_i
 			coordinates = []
   		while line = f.gets
 				unless line == "\n"

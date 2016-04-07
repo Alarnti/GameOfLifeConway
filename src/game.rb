@@ -50,7 +50,7 @@ class Game
 		if @board.empty?
 			return :empty
 		end
-		sleep(1)
+		sleep(0.5)
 	end
 end
 
