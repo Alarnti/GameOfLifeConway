@@ -4,11 +4,15 @@ class Board
 
   attr_reader :width, :height, :cells
 
-	def initialize(width,height, cells)
+	def initialize(height,width, cells)
 		@width = width
 		@height = height
 		@cells = cells
 	
+	end
+	
+	def self.create(cells)
+		Board.new(cells.length, cells[0].length, cells)
 	end
 
 	def empty?

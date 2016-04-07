@@ -17,7 +17,7 @@ class Game
 	def start(iterations = 5)
 		@player_name = @controller.greetings_and_name
 		
-		command = @controller.choose_command
+		command = @controller.choose_command(@player_name)
 	
 		begin
 			iterations.times do |count|
@@ -27,16 +27,16 @@ class Game
 				#elsif command == :stop
 					#dialog
 				elsif command == :exit
-					@controller.say_goodbye
+					@controller.say_goodbye(@player_name)
 				end 
 
 				if game_message == :empty
-					@controller.say_goodbye
+					@controller.say_goodbye(@player_name)
 				elsif game_message == :play
 					command = :play
 				end
 			end
-			iterations = @controller.how_much_continue?
+			iterations = @controller.how_much_continue?(@player_name)
 			
 		end while(true)
 	end
@@ -52,16 +52,5 @@ class Game
 		end
 		sleep(1)
 	end
-
-=begin
-	private 
-	def dialog
-		command = @controller.choose_command_dialog
-		case command
-			when :exit then @controller.say_goodbye
-			when :play then return :play
-		end
-	end
-=end
 end
 

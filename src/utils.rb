@@ -1,5 +1,4 @@
 require_relative "cell.rb"
-require_relative "board.rb"
  
 module Utils
 	def self.convert_matrix_to_cells(matrix, height, width)
@@ -15,7 +14,11 @@ module Utils
 			end
 		end
 
-		Board.new(width,height,cells)
+		cells
+	end
+
+	def self.file_exist?(file_name)
+		File.exist?(file_name)
 	end
 
 end

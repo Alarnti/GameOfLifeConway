@@ -1,16 +1,17 @@
 require_relative "../src/utils.rb"
+require_relative "../src/cell.rb"
 
+describe Utils do
 
-describe Board do
-	
 	before :all do
-		@board = Board.
-	end
+		@matrix = [[0,1],[1,0]]
+  end
 
-	describe "#alive?" do
-		it "returns current cell condition" do
-			expect(@cell_true.alive?).to be true
-			expect(@cell_false.alive?).to be false
+	describe "#convert_matrix_to_cells" do
+		it "converts matrix to cell-matrix" do
+			Utils.convert_matrix_to_cells(@matrix,2,2).each do |cell|
+				expect(cell).to be_instance_of(Cell) 
+			end
 		end
 	end
 
