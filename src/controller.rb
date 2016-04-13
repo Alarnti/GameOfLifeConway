@@ -22,7 +22,7 @@ class Controller
 		case command 
 			when "play" then :play
 			when "exit" then :exit
-		else "Your command was not recognized, please, try again"
+		else 'Your command was not recognized, please, try again'
 		end
 
 	end
